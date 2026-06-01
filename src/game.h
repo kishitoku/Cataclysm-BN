@@ -941,6 +941,7 @@ class game : public submap_load_listener
         void drop_in_direction(); // Drop w/ direction  'D'
 
         void butcher(); // Butcher a corpse  'B'
+        void dissect(); // dissect a corpse
     public:
         // Places the player at the specified point; hurts feet, lists items etc.
         auto place_player( const tripoint_bub_ms &dest, bool keep_grab = false ) -> point_rel_sm;
