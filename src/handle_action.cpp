@@ -2234,17 +2234,6 @@ bool game::handle_action()
                 }
                 break;
 
-            case ACTION_DISSECT:
-                if( u.has_active_mutation( trait_SHELL2 ) ) {
-                    add_msg( m_info, _( "You can't dissect while you're in your shell." ) );
-                } else if( u.is_mounted() ) {
-                    add_msg( m_info, _( "You can't dissect while you're riding." ) );
-                } else {
-                    dissect();
-                }
-                break;
-
-
             case ACTION_CHAT:
                 chat();
                 break;
