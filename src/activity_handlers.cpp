@@ -458,24 +458,24 @@ static void extract_or_wreck_cbms( std::vector<detached_ptr<item>> &cbms, int ro
                         it->faults.erase( fault_bionic_nonsterile );
                     }
                 }
-                add_msg( m_good, _( "You discover: %s!" ), it->tname() );
+                p.add_msg_if_player( m_good, _( "You discover: %s!" ), it->tname() );
             } else {
                 it->convert( itype_burnt_out_bionic );
                 if( it->has_fault( fault_bionic_nonsterile ) ) {
                     it->faults.erase( fault_bionic_nonsterile );
                 }
-                add_msg( m_bad, _( "Your imprecise surgery damaged a bionic, producing a %s." ), it->tname() );
+                p.add_msg_if_player( m_bad, _( "Your imprecise surgery damaged a bionic, producing a %s." ), it->tname() );
             }
         } else {
             if( !check_butcher_cbm( roll ) ) {
-                add_msg( m_bad, _( "Your imprecise surgery destroyed something." ) );
+                p.add_msg_if_player( m_bad, _( "Your imprecise surgery destroyed something." ) );
                 continue;
             } else {
                 // If we have non-bionic loot in a harvest's bionic_group it doesn't need to be marked non-sterile either.
                 if( it->has_fault( fault_bionic_nonsterile ) ) {
                     it->faults.erase( fault_bionic_nonsterile );
                 }
-                add_msg( m_good, _( "You discover: %s!" ), it->tname() );
+                p.add_msg_if_player( m_good, _( "You discover: %s!" ), it->tname() );
             }
         }
 
