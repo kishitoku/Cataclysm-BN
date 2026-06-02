@@ -464,7 +464,8 @@ static void extract_or_wreck_cbms( std::vector<detached_ptr<item>> &cbms, int ro
                 if( it->has_fault( fault_bionic_nonsterile ) ) {
                     it->faults.erase( fault_bionic_nonsterile );
                 }
-                p.add_msg_if_player( m_bad, _( "Your imprecise surgery damaged a bionic, producing a %s." ), it->tname() );
+                p.add_msg_if_player( m_bad, _( "Your imprecise surgery damaged a bionic, producing a %s." ),
+                                     it->tname() );
             }
         } else {
             if( !check_butcher_cbm( roll ) ) {
