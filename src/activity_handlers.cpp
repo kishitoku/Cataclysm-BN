@@ -1160,6 +1160,12 @@ void activity_handlers::butcher_finish( player_activity *act, player *p )
 {
     // TODO: Remove
     add_msg( m_debug, _( "Entered butcher_finish" ) );
+    if( act->targets.empty() ) {
+        add_msg( m_debug, _( "Act ID is [ %1s ]" ), act->id().str() );
+        act->set_to_null();
+        resume_for_multi_activities( *p );
+        return;
+    }
     // No targets means we are done
     if( act->targets.empty() ) {
         act->set_to_null();
