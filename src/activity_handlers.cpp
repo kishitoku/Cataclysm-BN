@@ -1158,6 +1158,8 @@ static void butchery_quarter( item *corpse_item, const player &p )
 
 void activity_handlers::butcher_finish( player_activity *act, player *p )
 {
+    // TODO: Remove
+    add_msg( m_debug, _( "Entered butcher_finish" ) );
     // No targets means we are done
     if( act->targets.empty() ) {
         act->set_to_null();
@@ -1197,7 +1199,11 @@ void activity_handlers::butcher_finish( player_activity *act, player *p )
 
     // index is a bool that determines if we are ready to start the next target
     if( act->index ) {
+        // TODO: Remove
+        add_msg( m_debug, _( "About to consider_butchery" ) );
         const butchery_setup setup = consider_butchery( *target, *p, action );
+        // TODO: Remove
+        add_msg( m_debug, _( "About to set_up_butchery_activity" ) );
         set_up_butchery_activity( *act, *p, setup );
         return;
     }
