@@ -465,8 +465,8 @@ static void extract_or_wreck_cbms( std::vector<detached_ptr<item>> &cbms, int ro
                     it->faults.erase( fault_bionic_nonsterile );
                 }
                 p.add_msg_player_or_npc( m_bad,
-                                     _( "Your imprecise surgery damaged a bionic, producing a burnt-out bionic." ),
-                                     _( "<npcname> damages a bionic during dissection" ) );
+                                         _( "Your imprecise surgery damaged a bionic, producing a burnt-out bionic." ),
+                                         _( "<npcname> damages a bionic during dissection" ) );
             }
         } else {
             if( !check_butcher_cbm( roll ) ) {
